@@ -1,0 +1,52 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: seagreen;
+      
+
+}
+
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:gold;
+    text-align: center;
+    
+}
+
+h2{
+text-align: center;
+color: yellow;
+}
+
+h3{
+    color:white;
+    text-align:center;
+}
+
+p{
+    text-align: center;
+    color: orange;
+}
+nav{
+    text-align: center;
+}
+
+ul{
+    text-align: center;
+    margin-left:-50px;
+}
+
+li{
+     
+list-style-type:none;
+margin-bottom:10px;
+padding:0;
+margin:0;
+ 
+}
+
+
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
