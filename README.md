@@ -6,9 +6,18 @@ GPU Cronch (1.0 complete, menu functionality next)
     * Calculates mining rig metrics based on card choice and PSU choice
     * Goal: To practice OOP, Java, IntelliJ and create a tool that cuts down on research time for my hobby.
     
+
+Tenmo Application
+    * Simulates Venmo Java program complete with API tokens, and PostgreSQL database.
+    * Utilizes Springboot and JdcbTemplate for server and client side functionality and connection.
+    * Practice with data sanitization and structuring full stack applications
+
+
 Miata Fanpage
     * First HTML project, working on formatting, styling, and basic HTML elements
     
+
+
     **Soon**
 Spaceship GPS (Planning stage)
     * Fun project to practice Java while understanding how code logic can represent a three dimensional space
