@@ -29,13 +29,17 @@ public class GPUCronch {
                 String[] lineArray = line.split(",");
                 GraphicsCard tempCard = new GraphicsCard(lineArray[0], lineArray[1], lineArray[2], Integer.parseInt(lineArray[3]),
                         Integer.parseInt(lineArray[4]), lineArray[5], Double.parseDouble(lineArray[6]), Double.parseDouble(lineArray[7]), Double.parseDouble(lineArray[8]));
-           GPUlist.add(tempCard);
+                GPUlist.add(tempCard);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 //************************MENU SELECTION***************************************
-
+        userOutput.displayGPUHeader(GPUlist.get(1));
+        userOutput.displayProfitabilityCard(GPUlist.get(1));
+        userOutput.displayPayoffCard(GPUlist.get(1));
+        userOutput.displayPowerStatsCard(GPUlist.get(1));
+        userOutput.displayCardList(GPUlist);
 //        private void mainMenu() {
 //            while (true) {
 //
@@ -46,7 +50,6 @@ public class GPUCronch {
 
 
         userOutput.displayCardList(GPUlist);
-
 
 
     }
