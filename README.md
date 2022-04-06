@@ -1,20 +1,24 @@
 # Side-Projectiles
-Side projects while learning Java
+Side projects while learning Software Development
 
 GPU Cronch (1.0 complete, menu functionality next)
-    * Tool used to calculate individual card electricity cost, profitability, and payoff date for used and new cards
-    * Calculates mining rig metrics based on card choice and PSU choice
-    * Goal: To practice OOP, Java, IntelliJ and create a tool that cuts down on research time for my hobby.
+   * Tool used to calculate individual card electricity cost, profitability, and payoff date for used and new cards
+   * Calculates mining rig metrics based on card choice and PSU choice
+   * Goal: To practice OOP, Java, IntelliJ and create a tool that cuts down on research time for my hobby.
     
+TEK Employee Registration
+   * Practice with JavaScript and Vue.js 2
+   * Functional add / modify of employees with form control
+   * Utilized a modal
 
 Tenmo Application
-    * Simulates Venmo Java program complete with API tokens, and PostgreSQL database.
-    * Utilizes Springboot and JdcbTemplate for server and client side functionality and connection.
-    * Practice with data sanitization and structuring full stack applications
+   * Simulates Venmo Java program complete with API tokens, and PostgreSQL database.
+   * Utilizes Springboot and JdcbTemplate for server and client side functionality and connection.
+   * Practice with data sanitization and structuring full stack applications
 
 
 Miata Fanpage
-    * First HTML project, working on formatting, styling, and basic HTML elements
+   * First HTML project, working on formatting, styling, and basic HTML elements
     
 
 
