@@ -27,20 +27,21 @@ INSERT INTO users (username,password_hash,role) VALUES ('user','$2a$08$UkVvwpULi
 INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
 
 
-
-CREATE SEQUENCE seq_farm_id
+CREATE SEQUENCE seq_card_id
         INCREMENT BY 1
         NO MAXVALUE
-        NOMINVALUE
+        NO MINVALUE
         CACHE 1;
-        
-CREATE TABLE farms (
-        farm_id int DEFAULT nextval('seq_farm_id'::regclass) NOT NULL,
-        user_id int NOT NULL REFERENCES users (user_id),
-        rig_id int REFERENCES rigs (rig_id),
-        bank_total numeric,
-        eth_total int,
-        CONSTRAINT PK_farm PRIMARY KEY (farm_id)
+
+CREATE TABLE cards (
+        card_id int DEFAULT nextval('seq_card_id'::regclass) NOT NULL,
+        card_brand varchar(15),
+        card_model varchar (30),
+        power_use int,
+        cost_new numeric NOT NULL,
+        daily_income numeric,
+        mining_speed numeric,
+        CONSTRAINT PK_card PRIMARY KEY (card_id)     
 );
 
 
@@ -48,7 +49,7 @@ CREATE TABLE farms (
 CREATE SEQUENCE seq_rig_id
         INCREMENT BY 1
         NO MAXVALUE
-        NOMINVALUE
+        NO MINVALUE
         CACHE 1;
 
 CREATE TABLE rigs (
@@ -62,22 +63,23 @@ CREATE TABLE rigs (
         CONSTRAINT PK_rig PRIMARY KEY (rig_id)     
 );
 
-CREATE SEQUENCE seq_card_id
+
+
+CREATE SEQUENCE seq_farm_id
         INCREMENT BY 1
         NO MAXVALUE
-        NOMINVALUE
+        NO MINVALUE
         CACHE 1;
-
-CREATE TABLE cards (
-        card_id int DEFAULT nextval('seq_card_id'::regclass) NOT NULL,
-        card_brand varchar(15),
-        card_model varchar (30),
-        power_use int,
-        cost_new numeric NOT NULL,
-        daily_income numeric,
-        mining_speed numeric,
-        CONSTRAINT PK_card PRIMARY KEY (card_id)     
+        
+CREATE TABLE farms (
+        farm_id int DEFAULT nextval('seq_farm_id'::regclass) NOT NULL,
+        user_id int NOT NULL REFERENCES users (user_id),
+        rig_id int REFERENCES rigs (rig_id),
+        bank_total numeric,
+        eth_total int,
+        CONSTRAINT PK_farm PRIMARY KEY (farm_id)
 );
+
 
 
 
