@@ -1,14 +1,19 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import BreweryCard from './BreweryCard';
+import BreweryDetail from './BreweryDetail';
+import GoogleMap from './GoogleMap';
+
+
 
 function Home() {
 
     let [currentStateLocation, setCurrentStateLocation] = useState("Pennsylvania");
     let [currentCityLocation, setCurrentCityLocation] = useState("");
     let [breweryList, setBreweryList] = useState([]);
-    // let [filteredBreweryList, setFilteredBreweryList] = useState([]);
- 
+
+    let [selectedBrewery, setSelectedBrewery] = useState(null);
+
 
 
     const fetchBreweries = useCallback(() => {
@@ -23,7 +28,7 @@ function Home() {
             .then(setBreweryList);
     }, [currentCityLocation, currentStateLocation])
 
-    
+
 
     const handleCityChange = event => {
         setCurrentCityLocation(event.target.value);
@@ -44,19 +49,20 @@ function Home() {
         fetchBreweries()
     }, [fetchBreweries])
 
-    // console.log(breweryList);
-    // console.log(currentStateLocation);
-
     return (
         <div className="App">
+
+
+
+
             <div>
-                <h1>Welcome to Brewtastic!</h1>
+                <h1 className='main-header'>Welcome to Brewtastic!</h1>
                 <h2>Find local breweries by city and state.</h2>
             </div>
             <div className="state-selector">
 
                 <label className='text-thick' htmlFor="state">Please select your state: </label>
-                <select name="state" id="state" onChange={handleStateChange} value={currentStateLocation}>
+                <select className='text-thick' name="state" id="state" onChange={handleStateChange} value={currentStateLocation}>
 
 
                     <option value="Alabama">Alabama</option>
@@ -115,26 +121,34 @@ function Home() {
                 <form>
                     <label className='text-thick' htmlFor='city'>Narrow search by city: </label>
                     <input className='text-thick' type="text" name="city" onChange={handleCityChange} value={currentCityLocation} />
-               
+
                 </form>
                 <p className='text-thick'>Click on a brewery card to view more information</p>
             </div>
 
             <div className='card-list-container'>
                 <div id='card-list'>
-             
-           
-
-
-                        <>
-                            {breweryList
-                                .map(brewery => (
-                                    <BreweryCard className='brewery-card' key={brewery.id} brewery={brewery}
-                                    />
-                                ))}
-                        </>
 
                 
+                    {selectedBrewery != null ?
+                    <div className='detail-container'>
+                        <BreweryDetail brewery={selectedBrewery} />
+                        <GoogleMap breweryLocation={selectedBrewery} />
+               
+                        <button onClick={() => setSelectedBrewery(null)}> Return to List</button>
+                    </div> : <></>
+}
+
+                    {breweryList
+                        .map(brewery => (
+                            <div key={brewery.id}>
+                                <BreweryCard className='brewery-card' brewery={brewery}
+                                />
+                                <button onClick={() => setSelectedBrewery(brewery)}>View Details</button>
+                            </div>
+                        ))}
+
+
 
                 </div>
             </div>
