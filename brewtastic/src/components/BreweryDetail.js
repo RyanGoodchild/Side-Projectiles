@@ -1,20 +1,16 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import GoogleMap from './GoogleMap';
+import React from 'react';
 
 function BreweryDetail({ brewery }) {
-
 
     return (
         <>
             <div id='details-left'>
-                <h1>Brewtastic!</h1>
-                <h3>Brewery details page.</h3>
-                <p>{brewery.id}</p>
-                <p>{brewery.street ? brewery.street + ',' : ""}  {brewery.city}, {brewery.state}, {brewery.postal_code}</p>
+                <h1>{brewery.name}</h1>
+              <p>Street: {brewery.street ? brewery.street : ""}</p>
+              <p>City: {brewery.city ? brewery.city : ""}</p>
+              <p>State: {brewery.state ? brewery.state : ""}</p>
+              <p>Zip: {brewery.postal_code ? brewery.postal_code : ""}</p>
             </div>
-            {/* <div id='details-right'>
-<GoogleMap breweryLocation={brewery.latitude} />
-            </div> */}
         </>
     );
 }

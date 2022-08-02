@@ -1,52 +1,20 @@
-
-
 .App {
   text-align: center;
-  /* background-color: #87cefa; */
-
   border-radius: 30px;
   padding-bottom: 5vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-
-
-
-
 .brewery-card {
   border: black 2px solid;
   border-radius: 30px;
+  width: 25vw;
+  height: 14vw;
+  max-height: 20vw;
+  background-color: #d2b48c;
 }
-
 
 #card-list {
   border-radius: 30px;
-  /* background-color: bisque; */
   background-color: #09006E;
   row-gap: 1vw;
   column-gap: 1vw;
@@ -58,32 +26,13 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-}
-
-.brewery-card {
-  width: 25vw;
-  height: 20vh;
-  /* display:inline-block; */
-  /* margin: 1vh; */
-  background-color: #d2b48c;
+  margin: auto;
+  width: 78.5vw;
 }
 
 .brewery-card:hover {
  font-weight: bolder;
- 
-  background-color: orange;
-
-}
-
-#card-list {
-  margin: auto;
-  width: 80vw;
-
-
-   /* display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: baseline;  */
+ background-color: orange;
 }
 
 .text-thick {
@@ -95,17 +44,88 @@
   font-size: 3em;
 }
 
-/* .opened {
-  font-size: 5em;
-  color: #61dafb;
-} */
 
-.detailModal {
-  /* display: none; */
+/* CSS for Details view */
+.detail-container {
 z-index:1;
-position: static;
-font-size: 2em;
-color: #61dafb;
-background-color: black;
-margin: auto;
+position:fixed;
+left: 30vw;
+right: 30vw;
+top: 20vh;
+padding-bottom: 20px;
+font-size: 2vh;
+color: #d2b48c;
+background-color: #09006E;
+border-radius: 30px;
+border: solid 2px white;
+display: flex;
+flex-direction: column;
+padding-top: 20px;
+padding-right: 20px;
+}
+
+.detail-chunks {
+  display: flex;
+  flex-direction: row;
+}
+
+#detail-button {
+  background-size: cover;
+  background:url(./images/clink.png) ;
+  width: 100px;
+  height: 100px;
+}
+
+#details-left {
+  padding-left: 1vh;
+  padding-right: 1vh;
+  width: 50%;
+
+}
+#details-right {
+flex-grow: 1;
+border-radius: 30px;
+max-width: 50%;
+}
+
+#list-return-button {
+  width: 15vh;
+  height: 5vh;
+  border-radius: 30px;
+  font-size: 1em;
+  margin-left: 12.5vh;
+}
+
+#clink-image {
+  width: 3vw;
+  height: 3vw;
+margin-top: -.5vw; 
+margin-bottom: -1vw;
+}
+
+#clink-link {
+margin-top: 5vh;
+}
+
+#card-spacer {
+display: flex;
+justify-content: space-evenly;
+}
+
+#brew-name {
+  font-size: 1vw;
+}
+
+.address-shortener {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: block;
+  line-height: 1em; 
+  max-height: 2em; 
+  font-size: 2vh;
+}
+
+.text-handler {
+  font-size: 2vh;
 }

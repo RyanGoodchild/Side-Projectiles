@@ -11,10 +11,6 @@ const containerStyle = {
 
 let lattt = brewery.breweryLocation.latitude;
 let longgg = brewery.breweryLocation.longitude;
-console.log(brewery.breweryLocation.latitude);
-console.log(brewery.breweryLocation.longitude);
-console.log(lattt);
-console.log(longgg);
 
 
   const center = {
@@ -22,30 +18,25 @@ console.log(longgg);
     lng: (Number(longgg))
   };
  
-  
-//   const marker = {
-//     LatLng: {center}
-//   }
-  
-//   const marker = {
-    
-//     // The below line is equivalent to writing:
-//     // position: new google.maps.LatLng(-34.397, 150.644)
-//     position: { lat: (Number(lattt)), lng: (Number(longgg)) },
-  
-//   };
+  const z = (Number(3));
+  const visible = true;
 
   return (
     <LoadScript
       googleMapsApiKey="AIzaSyCjb3CIvPRzLkjZGsUsAyvaows91mYO8bo"
     >
       <GoogleMap
+      id='details-right'
         mapContainerStyle={containerStyle}
         center={center}
         zoom={16}
         
       >
-        { /* Child components, such as markers, info windows, etc. */ }
+        <Marker
+        position={center}
+        zIndex={z}
+        visible={visible}
+        />
         <></>
       </GoogleMap>
     </LoadScript>

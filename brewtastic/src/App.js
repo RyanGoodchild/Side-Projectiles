@@ -10,20 +10,16 @@ function App() {
 
 
   return (
-    // <div className="App">
     <div className="App" style={{
       backgroundImage: `url(${image})`,
       backgroundRepeat: "no-repeat",
-      backgroundAttachment: 'fixed',
-      // height: '100vh',
-   
+      backgroundAttachment: 'fixed',   
       backgroundSize: 'cover',
     }}>
 
-
       <Home />
     </div>
-    // </div>
+  
 
   );
 }
